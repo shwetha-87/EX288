@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Run default assemble logic first (important)
+if [ -x /usr/libexec/s2i/assemble ]; then
+    /usr/libexec/s2i/assemble
+fi
+
+echo "----> Custom assemble step"
+
+# Copy HTML files from S2I injected source directory
+cp -Rf /tmp/src/*.html ./

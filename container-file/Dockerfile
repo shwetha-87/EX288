@@ -1,10 +1,12 @@
-FROM image-registry.openshift-image-registry.svc:5000/openshift/ubi9-micro:latest
+FROM ubi9-micro:latest 
+
+ARG ARTIFACT_URL
 
 WORKDIR /opt/app-root
 
-COPY postal-1.0 /opt/app-root/postal-1.0
-
-RUN chmod +x /opt/app-root/postal-1.0
+# Download the application binary during build
+RUN curl -L ${ARTIFACT_URL} -o /opt/app-root/postal-1.0 \
+    && chmod +x /opt/app-root/postal-1.0
 
 EXPOSE 8080
 

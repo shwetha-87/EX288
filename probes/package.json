@@ -1,0 +1,9 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "Simple Blog App for OpenShift Probes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

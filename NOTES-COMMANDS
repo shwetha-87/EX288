@@ -1,0 +1,3 @@
+2. oc new-build --name postal-backend --build-arg=ARTIFACT_URL=https://github.com/shwetha-87/EX288/raw/refs/heads/main/binary/postal-1.0 https://github.com/shwetha-87/EX288.git --context-dir=container-file --strategy docker --docker-image=registry.access.redhat.com/ubi9/ubi
+
+

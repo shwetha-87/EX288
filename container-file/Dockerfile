@@ -1,6 +1,6 @@
 FROM ubi-micro 
 
-ARG ARTIFACT_URL
+ARG ARTIFACT_URL=https://incorrect-url
 
 WORKDIR /opt/app-root
 

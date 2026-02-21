@@ -1,0 +1,67 @@
+apiVersion: template.openshift.io/v1
+kind: Template
+metadata:
+  name: catalog-frontend-deploy
+
+parameters:
+
+- name: NAME
+  required: true
+
+- name: FRONTEND_URL
+  required: true
+
+objects:
+
+- apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+    name: ${NAME}
+    labels:
+      app: catalog-ui
+      group: catalog
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: catalog-ui
+    template:
+      metadata:
+        labels:
+          app: catalog-ui
+          group: catalog
+      spec:
+        containers:
+        - name: ${NAME}
+          image: registry.domain1.example.com/${NAME}:latest
+          ports:
+          - containerPort: 8080
+
+- apiVersion: v1
+  kind: Service
+  metadata:
+    name: ${NAME}
+    labels:
+      app: catalog-ui
+      group: catalog
+  spec:
+    selector:
+      app: catalog-ui
+    ports:
+    - port: 8080
+      targetPort: 8080
+
+- apiVersion: route.openshift.io/v1
+  kind: Route
+  metadata:
+    name: ${NAME}
+    labels:
+      app: catalog-ui
+      group: catalog
+  spec:
+    host: catalog-ui-petrol.apps.domain1.example.com
+    to:
+      kind: Service
+      name: ${NAME}
+    port:
+      targetPort: 8080

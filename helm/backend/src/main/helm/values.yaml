@@ -1,0 +1,22 @@
+replicaCount: 1
+
+image:
+  repository: registry.domain1.example.com/finesmart/customer-backend
+  tag: latest
+  pullPolicy: IfNotPresent
+
+stage: devel
+
+service:
+  type: ClusterIP
+  port: 8080
+
+route:
+  enabled: true
+  tls:
+    enabled: false
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi

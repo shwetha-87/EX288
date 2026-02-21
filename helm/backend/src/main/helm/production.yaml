@@ -1,0 +1,15 @@
+image:
+  repository: registry.domain1.example.com/finesmart/customer-backend
+
+stage: production
+
+replicaCount: 2
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 1Gi
+
+route:
+  tls:
+    enabled: true

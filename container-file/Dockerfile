@@ -5,7 +5,7 @@ ARG ARTIFACT_URL
 WORKDIR /opt/app-root
 
 # Download the application binary during build
-ADD ${ARTIFACT_URL} -o /opt/app-root/postal-1.0 
+ADD ${ARTIFACT_URL} /opt/app-root/postal-1.0 
 
 RUN chmod +x /opt/app-root/postal-1.0
 

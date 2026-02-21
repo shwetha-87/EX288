@@ -1,4 +1,4 @@
-FROM ubi9-micro:latest 
+FROM golang:1.18-ubi9 
 
 ARG ARTIFACT_URL
 

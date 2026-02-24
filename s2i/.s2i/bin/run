@@ -1,2 +1,0 @@
-set -e
-export SERVER_PORT=8081

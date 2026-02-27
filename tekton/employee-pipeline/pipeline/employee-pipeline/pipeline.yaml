@@ -15,7 +15,7 @@ spec:
     - name: maven-repo
       type: string
     - name: registry-url
-      type: string
+      type: string 
 
   workspaces:
     - name: shared-workspace
@@ -44,6 +44,7 @@ spec:
         params:
           - name: MAVEN_MIRROR_URL
             type: string
+            value: $(params.maven-repo)
         workspaces:
           - name: source
         steps:

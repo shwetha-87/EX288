@@ -12,7 +12,7 @@ spec:
     - apiVersion: tekton.dev/v1
       kind: PipelineRun
       metadata:
-        generateName: pipeline-employee-backend-
+        generateName: 
       spec:
         serviceAccountName: pipeline
 
@@ -21,19 +21,19 @@ spec:
 
         params:
           - name: deployment-name
-            value: $(tt.params.git-repo-name)
+            value: 
 
           - name: git-url
-            value: $(tt.params.git-repo-url)
+            value: 
 
           - name: git-revision
-            value: $(tt.params.git-revision)
+            value: 
 
           - name: image
-            value: image-registry.openshift-image-registry.svc:5808/$(context.pipelineRun.namespace)/$(tt.params.git-repo-name):latest
+            value: 
 
           - name: maven-repo
-            value: http://nexus.domain1.example.com:8081/repository/maven-public/
+            value: 
 
           - name: registry-url
             value: registry.domain1.example.com

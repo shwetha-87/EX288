@@ -1,4 +1,4 @@
-FROM ubi-micro 
+#FROM ubi-micro 
 
 ARG ARTIFACT_URL=https://incorrect-url
 

@@ -5,10 +5,6 @@ metadata:
 parameters:
 
 # 🔹 NEW PARAMETER (must be added at beginning)
-- name: REGISTRY_URL
-  description: Container images registry URL.
-  required: true
-
 - name: NAME
   required: true
 

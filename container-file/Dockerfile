@@ -1,4 +1,4 @@
-FROM nodejs-image:latest
+FROM ubi9/ubi
 
 ARG ARTIFACT_URL=https://incorrect-url
 

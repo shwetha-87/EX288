@@ -2,9 +2,18 @@ apiVersion: template.openshift.io/v1
 kind: Template
 metadata:
   name: catalog-frontend-build
+labels:
+  key: value
+labels: 
+  mylabel: myapp
+  
 parameters:
-
 # 🔹 NEW PARAMETER (must be added at beginning)
+
+- description: Myapp configuration data
+  name: MYPARAMETER
+  required: true
+
 - name: NAME
   required: true
 

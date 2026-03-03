@@ -3,9 +3,11 @@ kind: Template
 metadata:
   name: catalog-frontend-build
 labels:
+  app: old
   key: value
-labels: 
-  mylabel: myapp
+  app: new
+  group: catalog
+
   
 parameters:
 # 🔹 NEW PARAMETER (must be added at beginning)
@@ -41,9 +43,6 @@ objects:
   kind: BuildConfig
   metadata:
     name: ${NAME}
-    labels:
-      app: catalog-ui
-      group: catalog
   spec:
     source:
       type: Git
@@ -72,9 +71,6 @@ objects:
   kind: Secret
   metadata:
     name: ${NAME}-git-secret
-    labels:
-      app: catalog-ui
-      group: catalog
   type: kubernetes.io/basic-auth
   stringData:
     username: ${GIT_USERNAME}

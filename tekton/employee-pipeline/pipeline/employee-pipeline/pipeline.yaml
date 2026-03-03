@@ -42,6 +42,7 @@ spec:
         params:
           - name: MAVEN_MIRROR_URL
             type: string
+            value: $(params.maven-repo)
         workspaces:
           - name: source
         steps:

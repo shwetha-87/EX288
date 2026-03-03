@@ -9,7 +9,7 @@ spec:
     name: {{ include "customer-backend.fullname" . }}
   port:
     targetPort: 8080
-  {{- if .Values.route.tls.enabled }}
+  {{- if eq .Values.secureTransport "true" }}
   tls:
     termination: edge
   {{- end }}

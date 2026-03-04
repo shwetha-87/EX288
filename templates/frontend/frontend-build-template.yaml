@@ -3,9 +3,9 @@ kind: Template
 metadata:
   name: catalog-frontend-build
 labels:
-  app: old
-  key: value
-  app: new
+  app: something
+  somekey: value
+  app: catalog-ui
   group: catalog
 
   
